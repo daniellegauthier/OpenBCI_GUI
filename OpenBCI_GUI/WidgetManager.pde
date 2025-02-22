@@ -28,6 +28,7 @@ W_PacketLoss w_packetLoss;
 W_Focus w_focus;
 W_EMGJoystick w_emgJoystick;
 W_Marker w_marker;
+W_MyNewWidget w_myNewWidget;
 
 //ADD YOUR WIDGET TO WIDGETS OF WIDGETMANAGER
 void setupWidgets(PApplet _this, ArrayList<Widget> w){
@@ -96,6 +97,19 @@ void setupWidgets(PApplet _this, ArrayList<Widget> w){
     w_spectrogram = new W_Spectrogram(_this);
     w_spectrogram.setTitle("Spectrogram");
     addWidget(w_spectrogram, w);
+
+    w_networking = new W_networking(_this);
+    w_networking.setTitle("Networking");
+    addWidget(w_networking, w);
+
+    w_myNewWidget = new W_myNewWidget(_this);
+    w_myNewWidget.setTitle("My New Widget");
+    addWidget(w_myNewWidget, w);
+
+    w_bandPower = new W_BandPower(_this);
+    w_bandPower.setTitle("Band Power");
+    addWidget(w_bandPower, w);
+
 
     if(currentBoard instanceof AnalogCapableBoard){
         w_pulsesensor = new W_PulseSensor(_this);
